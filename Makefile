@@ -32,3 +32,6 @@ $(MUSASHIGENCFILES) $(MUSASHIGENHFILES): $(MUSASHIGENERATOR)$(EXE)
 
 $(MUSASHIGENERATOR)$(EXE):  $(MUSASHIGENERATOR).c
 	$(CC) -o  $(MUSASHIGENERATOR)$(EXE)  $(MUSASHIGENERATOR).c
+
+libMusashi.a: m68kcpu.o m68kdasm.o m68kops.o softfloat/softfloat.o
+	$(AR) -rcs $@ $+
